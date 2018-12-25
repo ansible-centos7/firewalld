@@ -1,0 +1,7 @@
+- name: Add jenkins service
+  become: yes
+  firewalld:
+    service: jenkins
+    permanent: yes
+    state: enabled
+    immediate: yes
