@@ -1,0 +1,2 @@
+# Port to open: port number / protocol
+port: '22/tcp'
