@@ -1,0 +1,8 @@
+---
+- hosts: all
+  vars_files:
+    - add-service.yml
+  become: yes
+
+  roles:
+    - add-service

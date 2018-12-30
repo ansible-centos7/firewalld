@@ -1,7 +1,7 @@
-- name: Add jenkins service
+- name: Add service
   become: yes
   firewalld:
-    service: jenkins
+    service: "{{ firewalld_service }}"
     permanent: yes
     state: enabled
     immediate: yes
