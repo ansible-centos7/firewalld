@@ -1,7 +1,7 @@
-- name: Add port
+- name: Open port
   become: yes
   firewalld:
-    port: '{{ port }}'
+    port: '{{ firewalld_port }}'
     state: enabled
     permanent: yes
     immediate: yes

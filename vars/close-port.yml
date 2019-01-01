@@ -1,2 +1,2 @@
 # Port to close: port number / protocol
-port: '22/tcp'
+firewalld_port: '22/tcp'
