@@ -1,0 +1,29 @@
+- name: "Close port {{ port }}"
+  become: yes
+  firewalld:
+    port: '{{ port }}'
+    state: disabled 
+    permanent: true
+
+- name: Restart firewalld 
+  become: yes
+  systemd:
+    name: firewalld
+    state: restarted
+
+- name: Wait for firewalld stopped
+  become: no
+  local_action: wait_for
+  args:
+    host: '{{ inventory_hostname }}'
+    port: '{{ ansible_port }}'
+    state: stopped
+
+- name: Wait for firewalld started
+  become: no
+  local_action: wait_for
+  args:
+     host: '{{ inventory_hostname }}'
+     port: '{{ ansible_port }}'
+     state: started
+     delay: 15 

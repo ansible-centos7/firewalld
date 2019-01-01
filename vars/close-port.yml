@@ -1,0 +1,2 @@
+# Port to close: port number / protocol
+port: '22/tcp'

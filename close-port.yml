@@ -1,0 +1,8 @@
+---
+- hosts: all
+  vars_files:
+    - vars/close-port.yml
+  become: yes
+
+  roles:
+    - close-port
